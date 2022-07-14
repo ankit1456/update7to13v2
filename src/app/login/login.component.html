@@ -1,0 +1,41 @@
+<section class="login">
+    <div class="login_box">
+      <div class="left">
+        <div class="contact">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <h3>SIGN IN</h3>
+            <input formControlName="email" type="email" placeholder="Email" />
+
+            <div *ngIf="email?.touched && email?.invalid" class="error">
+                <p *ngIf="email?.errors?.['required']">
+                   email is required.
+                </p>
+        
+            </div>
+
+            <input
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+            />
+
+            <div *ngIf="password?.touched && password?.invalid" class="error">
+                <div *ngIf="password?.errors?.['required']">
+                 password is required.
+                </div>
+        
+            </div>
+
+            <button class="submit">Sign In</button>
+          </form>
+          <a class="newUser" routerLink="/register">New User? Create Account</a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-text">
+          <h2>Kochar Tech</h2>
+          <h6>ENHANCING CUSTOMER EXPERIENCE THROUGH TECHNOLOGY</h6>
+        </div>
+      </div>
+    </div>
+  </section>
